@@ -4,7 +4,7 @@ package cse360assign2;
  * This Calculator program simulates basic calculator functions
  * 
  * @author Randall Knutson
- * @ version 1.0
+ * @ version 2.0
  *
  */
 public class Calculator {
@@ -20,10 +20,10 @@ public class Calculator {
 	
 	/**
 	 * Getter for the current total
-	 * @return
+	 * @return total
 	 */
 	public int getTotal () {
-		return 0;
+		return total;
 	}
 	
 	/**
@@ -31,7 +31,7 @@ public class Calculator {
 	 * @param value The value to add
 	 */
 	public void add (int value) {
-		
+		total = total + value;
 	}
 	
 	/**
@@ -39,7 +39,7 @@ public class Calculator {
 	 * @param value The number to subtract by
 	 */
 	public void subtract (int value) {
-		
+		total = total - value;
 	}
 	
 	/**
@@ -47,15 +47,21 @@ public class Calculator {
 	 * @param value The number to multiply by
 	 */
 	public void multiply (int value) {
-		
+		total = total * value;
 	}
 	
 	/**
-	 * Divides the total by the inputed number
+	 * Divides the total by the inputed number.
+	 * If the parameter is zero, the total is set to zero
 	 * @param value The number to divide by
 	 */
 	public void divide (int value) {
-		
+		if (value == 0) {
+			total = 0;
+		}
+		else {
+			total = total / value;
+		}	
 	}
 	
 	/**
